@@ -1,0 +1,53 @@
+.wrapper {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+
+.wrapper li a > img {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-size: cover;
+}
+
+.wrapper li .profile {
+	margin-top: 15px;
+}
+
+
+.row .side-content {
+	padding-left: 90px;
+}
+
+a {
+	outline: none;
+}
+
+
+.user-view .background img{
+	/*height: 300px;*/
+}
+
+.user-view .profile {
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+}
+
+.dropdown-content {
+	width: 300px;
+}
+
+@media screen and (max-width: 900px) {
+	.wrapper {
+		padding: 0px;
+	}
+	.side-nav .sidenav {
+		padding-top: 0px;
+	}
+
+	.row .side-content {
+		padding-left: 10px;
+	}
+}

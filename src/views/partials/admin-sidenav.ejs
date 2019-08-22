@@ -1,0 +1,31 @@
+<div class="col s12 m12 l2">
+	<section class="side-nav">
+		<ul id="slide-out" class="sidenav sidenav-fixed blue-grey darken-3">
+			<li>
+				<div class="user-view center">
+					<div class="background">
+					<img src="/uploads/img/header/2.jpg" alt="profile" class="responsive-img">
+					</div>
+					<div class="img-profile">
+						<a href="#"><img class="profile z-depth-2" src="/uploads/img/profile/1.jpeg"></a>
+					</div>
+					<div class="desc-profile">
+						<a href="" class="white-text z-depth-2">Hermanto Lakoro</a>
+					</div>
+					
+				</div>
+			</li>
+
+			 <li class="<%- menu === 'dashboard'? 'active':'' %>"><a href="/admin/" class="white-text"><i class="material-icons">dashboard</i>Dashboard</a></li>
+			 <li class="<%- menu === 'posts'? 'active':'' %>"><a href="/admin/posts" class="white-text"><i class="material-icons">description</i>Posts</a></li>
+			 <li class="<%- menu === 'galery'? 'active':'' %>"><a href="/admin/galery" class="white-text"><i class="material-icons">collections</i>Galery</a></li>
+			 <li class="<%- menu === 'analitycs'? 'active':'' %>"><a href="/admin/analitycs" class="white-text"><i class="material-icons">show_chart</i>Analitycs</a></li>
+			 <li class="<%- menu === 'shop'? 'active':'' %>"><a href="/admin/shop" class="white-text"><i class="material-icons">shopping_cart</i>Shop</a></li>
+			 <li class="<%- menu === 'comments'? 'active':'' %>"><a href="/admin/comments" class="white-text"><i class="material-icons">comment</i>Comments</a></li>
+			 <li class="divider" tabindex="-1"></li>
+			 <li class="<%- menu === 'settings'? 'active':'' %>"><a href="/admin/settings" class="white-text"><i class="material-icons">settings</i>Settings</a></li>
+			 <li class="<%- menu === 'logout'? 'active':'' %>"><a href="/admin/logout" class="white-text"><i class="material-icons">exit_to_app</i>LogOut</a></li>
+		    
+		</ul>
+	</section>
+</div>
