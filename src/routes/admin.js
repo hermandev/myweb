@@ -51,6 +51,10 @@ router.get('/settings', (req, res) => {
 })
 // END SETTINGS
 
-
+// LOGIN
+router.get('/login', (req, res) => {
+  res.render('pages/dashboard/login')
+})
+// END LOGIN
 
 module.exports = router

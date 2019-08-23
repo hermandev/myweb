@@ -15,7 +15,9 @@ const public = require('./routes/public')
 
 app.use(public)
 app.use('/admin', admin)
-
+app.get('*', (req, res) => {
+	res.render('pages/public/404')
+}) 
 
 app.listen(3000, () => {
   console.log('Server Ready!!!!')
