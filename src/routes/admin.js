@@ -55,6 +55,14 @@ router.get('/settings', (req, res) => {
 router.get('/login', (req, res) => {
   res.render('pages/dashboard/login')
 })
+
+router.post('/login', (req, res) => {
+  // res.render('pages/dashboard/login')
+  res.json({
+  	username: req.body.username,
+  	password: req.body.password
+  })
+})
 // END LOGIN
 
 module.exports = router
