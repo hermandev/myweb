@@ -82,20 +82,31 @@ header .navbar nav ul li a {
 header .navbar nav ul li a:hover {
   color: #D6D6D6;
 }
+header .search {
+  display: flex;
+}
 header .search input {
-  border: 1px solid rgba(0, 0, 0, 0.6);
+  flex: 1;
+  height: 25px;
+  border: 1px solid rgba(0, 100, 100, 0.95);
   outline: none;
-  padding: 5px;
   border-radius: 5px;
   transition-property: all;
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
   transition-delay: 0s;
+  margin-right: 10px;
+  background: rgba(0, 143, 104, 0.95);
 }
 header .search input:focus {
   width: 200px;
   padding-left: 10px;
   padding-right: 10px;
+}
+header .search .social img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
 }
 
 .container {
