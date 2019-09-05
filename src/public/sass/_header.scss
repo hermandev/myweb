@@ -43,7 +43,6 @@ header {
 
 	.search {
 		display: flex;
-			// background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNCkiIGQ9Ik0zMSAyNy4ybC03LjYtNi40Yy0uOC0uNy0xLjYtMS0yLjMtMSAyLTIgMy00LjggMy03LjggMC02LjYtNS40LTEyLTEyLTEyUzAgNS40IDAgMTJzNS40IDEyIDEyIDEyYzMgMCA1LjctMSA3LjgtMyAwIC44LjMgMS42IDEgMi40bDYuNCA3LjZjMSAxLjIgMyAxLjMgNCAuMnMxLTMtLjItNHpNMTIgMjBjLTQuNCAwLTgtMy42LTgtOHMzLjYtOCA4LTggOCAzLjYgOCA4LTMuNiA4LTggOHoiLz48L3N2Zz4=") 7px 50%/1em 1em no-repeat var(--subtle);
 		input {
 			flex: 1;
 			height: 25px;
@@ -56,16 +55,22 @@ header {
 			transition-delay: 0s;
 			margin-right: 10px;
 			background:rgba(0,143,104,0.95);
+			color: #D6D6D6;
+			font-size: 16px;
 		}
 
 		input:focus {
 			width: 200px;
 			padding-left: 10px;
 			padding-right: 10px;
+		}
 
+		span{
+			background-image: url('/img/cari.svg');
 		}
 
 		.social {
+
 			img {
 				width: 30px;
 				height: 30px;
