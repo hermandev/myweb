@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Register User</title>
+	<style>
+		.container {
+			width: 500px;
+			margin: 200px auto;
+			text-align: center;
+		}
+
+		.container h1 {
+			text-align: center;
+		}
+		
+		.input-group {
+			margin-bottom: 10px;
+		}
+
+		.input-group input {
+			padding: 5px;
+			width: 200px;
+		}
+
+		.input-group label {
+			display: inline-block;
+			width: 100px;
+		}
+
+		.btn {
+			padding: 10px;
+			width: 100px;
+			margin-top: 20px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>User Register</h1>
+		<form action="/admin/user/register" method="post">
+			<div class="input-group">
+				<label for="">Username</label>
+				<input type="text" name="username" placeholder="Masukan Username">
+			</div>
+			<div class="input-group">
+				<label for="">Email</label>
+				<input type="email" name="email" placeholder="Masukan Email">
+			</div>
+			<div class="input-group">
+				<label for="">Password</label>
+				<input type="password" name="password" placeholder="Masukan Password">
+			</div>
+			<input type="submit" value="Register" class="btn">
+		</form>
+	</div>
+</body>
+</html>
