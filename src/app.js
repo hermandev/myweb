@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const path = require('path')
 const session = require('express-session')
+const mongoose = require('mongoose')
 const app = express()
 require('dotenv').config()
 
@@ -20,6 +21,8 @@ const {
 	APP_SESS_NAME,
 	APP_SESS_LIFETIME,
 	APP_NODE_ENV,
+	APP_MONGO_USER,
+	APP_MONGO_PASS
 } = process.env
 
 const IN_PROD = APP_NODE_ENV === 'production'
@@ -44,6 +47,18 @@ app.get('*', (req, res) => {
 	res.render('pages/public/404')
 }) 
 
-app.listen(APP_PORT, () => {
-  console.log('Server Ready!!!!')
+// Prod
+mongoose.connect(`mongodb://${APP_MONGO_USER}:${APP_MONGO_PASS}@ds115493.mlab.com:15493/labawp`, {useNewUrlParser: true}).then(() => {
+	app.listen(APP_PORT, () => {
+	  console.log('Server Ready!!!!')
+	})
+}).catch(err => {
+	console.log(err)
 })
+
+
+// app.listen(APP_PORT, () => {
+//   console.log('Server Ready!!!!')
+// })
+
+
