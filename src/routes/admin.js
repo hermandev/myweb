@@ -57,7 +57,7 @@ router.get('/login', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
-  // res.render('pages/dashboard/login')
+  res.render('pages/dashboard/login')
   res.json({
   	username: req.body.username,
   	password: req.body.password
