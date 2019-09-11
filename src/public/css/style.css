@@ -70,6 +70,9 @@ header .navbar .brand h1 {
   display: inline-block;
   padding-right: 10px;
 }
+header .navbar .brand h1 span {
+  color: #CEF444;
+}
 header .navbar nav ul li {
   display: inline-block;
   padding: 10px;

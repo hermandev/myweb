@@ -48,17 +48,17 @@ app.get('*', (req, res) => {
 }) 
 
 // Prod
-mongoose.connect(`mongodb://${APP_MONGO_USER}:${APP_MONGO_PASS}@ds115493.mlab.com:15493/labawp`, {useNewUrlParser: true}).then(() => {
-	app.listen(APP_PORT, () => {
-	  console.log('Server Ready!!!!')
-	})
-}).catch(err => {
-	console.log(err)
-})
-
-
-// app.listen(APP_PORT, () => {
-//   console.log('Server Ready!!!!')
+// mongoose.connect(`mongodb://${APP_MONGO_USER}:${APP_MONGO_PASS}@ds115493.mlab.com:15493/labawp`, {useNewUrlParser: true}).then(() => {
+// 	app.listen(APP_PORT, () => {
+// 	  console.log('Server Ready!!!!')
+// 	})
+// }).catch(err => {
+// 	console.log(err)
 // })
+
+
+app.listen(APP_PORT, () => {
+  console.log('Server Ready!!!!')
+})
 
 
