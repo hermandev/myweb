@@ -38,7 +38,11 @@
 </head>
 <body>
 	<div class="container">
+		
 		<h1>User Register</h1>
+		<% if(errors){ %>
+			<span><%= errors[0].error %></span>
+		<% } %>
 		<form action="/admin/user/register" method="post">
 			<div class="input-group">
 				<label for="">Username</label>

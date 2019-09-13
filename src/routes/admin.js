@@ -1,4 +1,5 @@
 const express = require('express')
+const bcrypt = require('bcryptjs')
 const router = express.Router()
 // Database
 const Users = require('../models/Users.js')
@@ -8,8 +9,7 @@ const Users = require('../models/Users.js')
 // DASHBOARD
 router.get('/', async (req, res) => {
   const data = await Users.find()
-  console.log(data)
-  res.render('pages/dashboard/index', {data: data, title:"Home"})
+  res.render('pages/dashboard/index', {data: data})
 })
 // END DASHBOARD
 
@@ -58,36 +58,44 @@ router.get('/settings', async (req, res) => {
 
 // REGISTER
 router.get('/user/register', async (req, res) => {
-  res.render('pages/dashboard/register')
+  res.render('pages/dashboard/register', {errors:""})
 })
 
 router.post('/user/register', async (req, res) => {
-  const {username, email, password} = req.body
-  // const data = {
-  //   username: req.body.username,
-  //   email: req.body.email,
-  //   password: req.body.password
-  // }
-  const addUSer = await Users({
-    username:username,
-    email:email,
-    password: password,
-    updateAt:new Date(),
-    createAt: new Date() 
-  }).save()
-
-  if(!addUSer) {
-    res.json({
-      error: true,
-      msg: "ada masalah saat mendaftar"
+  try{
+    const {username, email, password} = req.body
+    const checkUser = await Users.findOne({
+      email: email
     })
+
+    const msg = []
+
+    if(checkUser) {
+      msg.push({error:"Email sudah terdaftar"})
+      res.render('pages/dashboard/register', {errors:msg})
+    } else {
+      const hashPassword = await bcrypt.hash(password, 12)
+      const addUSer = await Users({
+        username:username,
+        email:email,
+        password: hashPassword,
+        updateAt:new Date(),
+        createAt: new Date() 
+      }).save()
+      if(!addUSer) {
+        res.json({
+          error: true,
+          msg: "ada masalah saat mendaftar"
+        })
+      } else {
+        res.redirect('/admin')
+      }
+    }
+  } catch(err) {
+    console.log(err)
   }
+
   
-
-  res.json({
-    msg: "User Berhasil mendaftar"
-  })  
-
 })
 
 // END REGISTER
@@ -106,5 +114,10 @@ router.post('/login', async (req, res) => {
   })
 })
 // END LOGIN
+
+// LOGOUT
+router.get('/logout', async (req, res) => {
+  res.render('pages/dashboard/login')
+})
 
 module.exports = router

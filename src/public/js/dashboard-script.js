@@ -7,4 +7,8 @@ $(document).ready(function(){
 		alignment:'left',
 		belowOrigin: true,
 	})
+
+	 let quill = new Quill('#editor', {
+	    theme: 'snow'
+	  });
 })
