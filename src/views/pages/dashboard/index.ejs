@@ -5,7 +5,12 @@
 
 	<div class="col s12 m12 l10 side-content">
 		<div class="card">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis voluptate quasi ipsam magnam, delectus. Fugiat aspernatur quibusdam velit cum, earum animi soluta, reiciendis, deserunt tempora atque voluptatem? Voluptatem, at, dignissimos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eligendi reiciendis consectetur. Eos temporibus unde dolor, ea doloribus animi culpa labore ipsa recusandae! Fugit molestiae, deserunt aut qui optio rem.</p>
+			<ul>
+				<% data.forEach(function(user){ %>
+					<li><%= user.username; %> || <%= user.email; %> <button>Hapus</button></li>
+				  <% }); %>
+				
+			</ul>
 		</div>
 	</div>
 </div>

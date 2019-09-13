@@ -7,7 +7,9 @@ const Users = require('../models/Users.js')
 
 // DASHBOARD
 router.get('/', async (req, res) => {
-  res.render('pages/dashboard/index')
+  const data = await Users.find()
+  console.log(data)
+  res.render('pages/dashboard/index', {data: data, title:"Home"})
 })
 // END DASHBOARD
 
@@ -60,12 +62,32 @@ router.get('/user/register', async (req, res) => {
 })
 
 router.post('/user/register', async (req, res) => {
-  const data = {
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password
+  const {username, email, password} = req.body
+  // const data = {
+  //   username: req.body.username,
+  //   email: req.body.email,
+  //   password: req.body.password
+  // }
+  const addUSer = await Users({
+    username:username,
+    email:email,
+    password: password,
+    updateAt:new Date(),
+    createAt: new Date() 
+  }).save()
+
+  if(!addUSer) {
+    res.json({
+      error: true,
+      msg: "ada masalah saat mendaftar"
+    })
   }
-  res.render('pages/dashboard/register',{data: data})
+  
+
+  res.json({
+    msg: "User Berhasil mendaftar"
+  })  
+
 })
 
 // END REGISTER
