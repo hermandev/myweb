@@ -19,6 +19,6 @@
     "express-device": "^0.4.2",
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.16.2",
-    "mongoose": "^5.6.9"
+    "mongoose": "^5.7.5"
   }
 }
